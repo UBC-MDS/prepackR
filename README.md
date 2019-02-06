@@ -11,6 +11,36 @@ A common rule of thumb for data scientist is that the data preparation process w
 
 ## Function Descriptions
 
+### `splitter(X, target_column, split_size, seed)`
+
+**Description:** create a function that operates in a similar manner to scikit-learns implementation of `train_test_split`.  Accepts a `tbl_df`, `df`, or `data.frame` as input.  Returns `tbl_df` as output for each train and each test set.
+
+| Input Parameters | Input Type             | Output Parameters | Output Type    |
+|------------------|------------------------|-------------------|----------------|
+| X                | tbl_df,data.frame,tbl  | y train           | 1D tbl_df      |
+| target_column    | integer, string        | y test            | 1D tbl_df      |
+| split_size       | numeric                | X train           | tbl_df         |
+| seed             | numeric                | X test            | tbl_df         |
+
+### `stdizer(X, col_index=None, method, method_args)`
+
+**Description:** standardize features. Accepts `tbl_df`, `tbl`, or `data.frame` as input.  Returns `tbl_df` as output.
+
+| Input Parameters | Input Type              | Output Parameters    | Output Type |
+|------------------|-------------------------|----------------------|-------------|
+| X                | tbl_df, data.frame, tbl | X_standardized       | tbl_df      |
+| col_index        | vector of indices       |                      |             |
+| method           | string                  |                      |             |
+| method_args      | named vector            |                      |             |
+
+### `na_counter(X)`
+
+**Description:** summarise the missing data (`NA` values) in a dataset.  Accepts `tbl_df`, `tbl`, or `data.frame` as input.  Returns tidy `tbl_df` with a column for `NA` count and `NA` proportion.
+
+| Input Parameters | Input Type             | Output Parameters  | Output Type |
+|------------------|------------------------|--------------------|-------------|
+| X                | tbl_df,data.frame,tbl  | X_na_counter       | tbl_df      |
+
 ## Relationship to the R ecosystem
 
 ### `splitter`
