@@ -15,7 +15,7 @@ Package that contains methods to assist with standard data preprocessing tasks.
 
 ### `splitter`
 
-This function does not currently exist in R. However, the function [sample](https://www.rdocumentation.org/packages/base/versions/3.5.2/topics/sample) from the [base R](https://www.rdocumentation.org/packages/base/versions/3.5.2) package. Specifically, it returns a random subset of an input vector based on a specified size. In order apply a random split to the training/testing data based on a specified percentage, we will need to leverage this function.
+This function does not currently exist in R. However, the function [sample](https://www.rdocumentation.org/packages/base/versions/3.5.2/topics/sample) from the [base R](https://www.rdocumentation.org/packages/base/versions/3.5.2) package will be relevant. Specifically, it returns a random subset of an input vector based on a specified size. In order apply a random split to the training/testing data based on a specified percentage, we will need to leverage this function.
 
 ### `stdizer`
 
@@ -28,9 +28,9 @@ However, this function is not a one-stop shop to scale by:
 1. Subtracting a first value, then dividing by second (a user specified mean and standard deviation)
 2. Making a range from a start to end value (to linearly transform the data from a user specified minimum to maximum)
 
-As a result, this function will allow users more standardization methods.
+As a result, this function will allow users more options for their method of standardization.
 
-These standardization techniques are based on [Minitab documentation](https://support.minitab.com/en-us/minitab/18/help-and-how-to/calculations-data-generation-and-matrices/standardize/standardize-columns-of-data/)
+These standardization techniques are based on the [Minitab documentation](https://support.minitab.com/en-us/minitab/18/help-and-how-to/calculations-data-generation-and-matrices/standardize/standardize-columns-of-data/).
 
 ### `na_counter`
 
