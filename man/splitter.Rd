@@ -22,7 +22,6 @@ tbl_df
 Takes in a tbl_df, df, or data.frame and returns a tbl_df for each of X_train, X_test, y_train, y_test.
 }
 \examples{
-require(tibble)
 df <- tibble::tibble(X = c(1:10), y = rbinom(10, 1, 0.5))
 
 split_data <- splitter(df, target = "y", split_size = 0.8, seed=42)
