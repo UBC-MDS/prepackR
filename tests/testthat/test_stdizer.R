@@ -27,15 +27,15 @@ test_that("Test that each method works",{
   result_mean_sd <- tibble(x = c(-1, -1, 1, 1), y = c(-1, -1, 1, 1))
   result_mean <- tibble(x = c(-0.5, -0.5, 0.5, 0.5), y = c(-0.5, -0.5, 0.5, 0.5))
   result_sd <- tibble(x = c(0, 0, 2, 2), y = c(0, 0, 2, 2))
-  # result_min_max
-  # result_own
+  result_min_max <- tibble(x = c(-2, -2, -1.5, -1.5), y = c(-0.75, -0.75, -0.5 -0.5))
+  result_own <- tibble(x = c(0,0,1,1), y = c(0,0,1,1))
 
   # test each method
   expect_equal(stdizer(df, method="mean_sd"), result_mean_sd)
   expect_equal(stdizer(df, method="mean"), result_mean)
   expect_equal(stdizer(df, method="sd"), result_sd)
-  # expect_equal
-  # expect_equal
+  expect_equal(stdizer(df, method="min_max"), result_min_max)
+  expect_equal(stdizer(df, method="own", method_args = list(c(4, 2), c(3,4))), result_own)
 
 
 })
