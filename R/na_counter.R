@@ -13,5 +13,12 @@
 #' na_counter(X=df, col_index = c("feat1"))
 #'
 na_counter <- function(X, col_index) {
-
+  assertthat::assert_that(is.vector(col_index) | is.null(col_index), msg = "col_index must be a vector")
+  assertthat::assert_that(is.data.frame(X), msg = "X must be a dataframe")
+  X <- tibble::as_tibble(X)
+  if (length(col_index)!=0){
+    X <- dplyr::select(X, col_index)
+  }
+  na_count <- dplyr::summarise_all(X, dplyr::funs(sum(is.na(.))))
+  return(na_count)
 }
