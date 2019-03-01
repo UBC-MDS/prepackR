@@ -24,16 +24,16 @@ test_that("Test that each method works",{
   df <- tibble(x = c(0,0,1,1), y = c(0,0,1,1))
 
   # create result for each method
-  result_mean_sd <- tibble(x = c(-1, -1, 1, 1), y = c(-1, -1, 1, 1))
+  result_mean_sd <- tibble(x = as.integer(c(-1, -1, 1, 1)), y = as.integer(c(-1, -1, 1, 1)))
   result_mean <- tibble(x = c(-0.5, -0.5, 0.5, 0.5), y = c(-0.5, -0.5, 0.5, 0.5))
-  result_sd <- tibble(x = c(0, 0, 2, 2), y = c(0, 0, 2, 2))
+  result_sd <- tibble(x = as.integer(c(0, 0, 2, 2)), y = as.integer(c(0, 0, 2, 2)))
   result_min_max <- tibble(x = c(0,0,1,1), y = c(0,0,1,1))
   result_own <- tibble(x = c(-2, -2, -1.5, -1.5), y = c(-2, -2, -1.5, -1.5))
 
   # test each method
-  expect_equal(stdizer(df, method="mean_sd"), result_mean_sd)
+  expect_equal(stdizer(df, method="mean_sd") %>% dplyr::mutate_all(as.integer), result_mean_sd)
   expect_equal(stdizer(df, method="mean"), result_mean)
-  expect_equal(stdizer(df, method="sd"), result_sd)
+  expect_equal(stdizer(df, method="sd") %>% dplyr::mutate_all(as.integer), result_sd)
   expect_equal(stdizer(df, method="min_max"), result_min_max)
   expect_equal(stdizer(df, method="own", method_args = c(4, 2)), result_own)
 
