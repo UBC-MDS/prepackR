@@ -1,6 +1,6 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "prepackR"
+author: "Jingyun Chen, Anthony Chiodo, Sarah Watts"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -16,15 +16,33 @@ knitr::opts_chunk$set(
 )
 ```
 
+Welcome to prepackR! This function will allow you to perform some basic data cleaning/processing tasks. The information below will walk you through the functionality of this package.
+
+Step 1, load the package.
+
 ```{r}
 library(prepackR)
+```
 
+Now that the package is loaded, you will have access to three functions.     
+
+1. stdizer - a function that allows you to standardize a dataset     
+2. na_counter - a function that allows you to count the number of na values in dataset     
+3. splitter - a function that allows you to split a dataset into training and testing
+
+Let's start with the stdizer function!
+
+```{r}
 # Load gapminder data set
 df <- gapminder::gapminder
 
 # Scale gdpPercap
 df_scaled <- stdizer(X = df, col_index = c(6), method = 'mean_sd')
+```
 
+Now let's take a look at the na_counter function.
+
+```{r}
 # Setup sample dataset 
 Name <- c("Sam", "Tim", NA)
 Sex <- c("women", "men", "women")
@@ -33,8 +51,14 @@ dt <- data.frame(Name, Sex, Age)
 
 # Count NAs in sample dataset
 na_count <- na_counter(dt)
+```
+
+Finally, let's look at the splitter function.
+
+```{r}
+# Load gapminder data set
+df <- gapminder::gapminder
 
 # Split gapminder
 split_data <- splitter(df, 1, split_size = 0.8, seed=42)
 ```
-
