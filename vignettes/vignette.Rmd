@@ -24,7 +24,18 @@ library(prepackR)
 df <- gapminder::gapminder
 
 # Scale gdpPercap
-df_scaled <- stdizer(df,"gdpPercap", method = "mean_sd")
+df_scaled <- stdizer(X = df, col_index = c(6), method = 'mean_sd')
 
+# Setup sample dataset 
+Name <- c("Sam", "Tim", NA)
+Sex <- c("women", "men", "women")
+Age <- c(55, 62, NA)
+dt <- data.frame(Name, Sex, Age)
+
+# Count NAs in sample dataset
+na_count <- na_counter(dt)
+
+# Split gapminder
+split_data <- splitter(df, 1, split_size = 0.8, seed=42)
 ```
 
