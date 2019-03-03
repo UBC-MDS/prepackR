@@ -18,7 +18,7 @@ A common rule of thumb for data scientist is that the data preparation process w
 | Input Parameters | Input Type             | Output Parameters | Output Type    |
 |------------------|------------------------|-------------------|----------------|
 | X                | tbl_df,data.frame,tbl  | y train           | 1D tbl_df      |
-| target_column    | integer, string        | y test            | 1D tbl_df      |
+| target_index    | numeric        | y test            | 1D tbl_df      |
 | split_size       | numeric                | X train           | tbl_df         |
 | seed             | numeric                | X test            | tbl_df         |
 

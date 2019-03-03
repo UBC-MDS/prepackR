@@ -3,12 +3,12 @@
 #'
 #' Takes in a tbl_df, df, or data.frame and returns a tbl_df for each of X_train, X_test, y_train, y_test.
 #'
-#' @param X tbl_df, tbl, data.frame
-#' @param target_index numeric
-#' @param split_size numeric
-#' @param seed numeric
+#' @param X tbl_df, tbl, data.frame, input dataset
+#' @param target_index numeric, the column index of target variable
+#' @param split_size numeric, proportion of the dataset to include in the test split
+#' @param seed numeric, random state that will make code reproducible
 #'
-#' @return tbl_df
+#' @return result, list, a list contains four tbl_df including Xtrain, ytrain, Xtest, ytest
 #' @export
 #'
 #' @examples
