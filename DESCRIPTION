@@ -13,4 +13,7 @@ LazyData: true
 RoxygenNote: 6.1.1
 Imports: tibble
 Suggests: 
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
