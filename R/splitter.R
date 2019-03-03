@@ -20,7 +20,7 @@
 splitter <- function(X, target_index, split_size, seed) {
   
   # input type check
-  if (!is.data.frame(X) | !is.tibble(X)){
+  if (!is.data.frame(X) | !tibble::is_tibble(X)){
     stop("TypeError: X must be of tbl_df, tbl, or data.frame")
   }
   if (!is.numeric(target_index)){
@@ -48,7 +48,7 @@ splitter <- function(X, target_index, split_size, seed) {
   }
   
   if (is.data.frame(X)){
-    X <- as.tibble(X)
+    X <- tibble::as.tibble(X)
   }
   
   # split dataset into features and target
