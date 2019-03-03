@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: c(
     person("Anthony", "Chiodo", role = c("aut"), email = "apchiodo@alumni.ubc.ca"),
     person("Sarah", "Watts", role = c("aut"), email = "smwatts@edu.uwaterloo.ca"),
-    person("Jingyun", "Chen", role = c("aut"), email = "jchen9314@gmail.com"))
+    person("Jingyun", "Chen", role = c("aut", "cre"), email = "jchen9314@gmail.com"))
 Description: This package allows for data standardization, counting NA values and splitting testing/training data.
 License: MIT + file LICENSE
 Encoding: UTF-8
