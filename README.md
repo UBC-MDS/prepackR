@@ -39,7 +39,7 @@ na_counter(X=df, col_index = c("feat1"))
 
 ## Test coverage
 
-![]('img/coverage_report.png')
+![](img/coverage_report.png)
 
 ## Function Descriptions
 
