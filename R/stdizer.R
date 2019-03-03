@@ -13,7 +13,7 @@
 #' @examples
 #' df <- tibble::tibble(feat1 = c(1:100), feat2 = runif(100, min = 0, max = 5000))
 #'
-#' df_stdized <- stdizer(X = df, col_index = c(1, 2), method = 'mean_std')
+#' df_stdized <- stdizer(X = df, col_index = c(1, 2), method = 'mean_sd')
 stdizer <- function(X, col_index=NULL, method, method_args) {
 
   if (is.null(col_index)) {
