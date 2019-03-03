@@ -1,16 +1,15 @@
 Package: prepackR
-Title: What the Package Does (One Line, Title Case)
+Title: Data cleaning and data processing.
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com")
-Description: What the package does (one paragraph).
+Authors@R: c(
+    person("Anthony", "Chiodo", role = c("aut"), email = "apchiodo@alumni.ubc.ca"),
+    person("Sarah", "Watts", role = c("aut"), email = "smwatts@edu.uwaterloo.ca"),
+    person("Jingyun", "Chen", role = c("aut"), email = "jchen9314@gmail.com"))
+Description: This package allows for data standardization, counting NA values and splitting testing/training data.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Suggests:
+    testthat, knitr, rmarkdown
+VignetteBuilder: knitr
 RoxygenNote: 6.1.1
-Imports: tibble
-Suggests: 
-    testthat

@@ -9,6 +9,38 @@
 
 A common rule of thumb for data scientist is that the data preparation process will take approximately 80% of the total time on a project. Not only is this process time consuming, but it is also considered one of the less enjoyable components of a project ([Forbes, 2016](https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/#3d12fbbf6f63)). To help address this problem, we have decided to build a package that will help improve some of the common techniques used in data preparation. This includes a function that will streamline the process of splitting a dataset into testing and training data (and provide a model ready output!), a function that incorporates more standardization methods then a data scientist could ever want _and_ a function that will allow data scientist to quickly understand the columns and quantity with `NA` values in a dataset.
 
+## Install
+
+`devtools::install_github("https://github.com/UBC-MDS/prepackR.git")`
+
+## Example Useage
+
+`stdizer()`
+
+```
+df <- tibble::tibble(feat1 = c(1:100), feat2 = runif(100, min = 0, max = 5000))
+df_stdized <- stdizer(X = df, col_index = c(1, 2), method = 'mean_sd')
+```
+
+`splitter()`
+
+```
+df <- tibble::tibble(X = c(1:10), y = rbinom(10, 1, 0.5))
+split_data <- splitter(df, target_index, split_size = 0.8, seed=42)
+```
+
+`na_counter()`
+
+```
+df <- tibble::tibble(feat1 = c(1:3, NA, 5:7, NA, NA, NA))
+na_counter(X=df, col_index = c("feat1"))
+
+```
+
+## Test coverage
+
+![](img/coverage_report.png)
+
 ## Function Descriptions
 
 ### `splitter(X, target_column, split_size, seed)`

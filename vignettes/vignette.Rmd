@@ -1,0 +1,41 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r}
+
+library(prepackR)
+
+# Load gapminder data set
+df <- gapminder::gapminder
+
+# Scale gdpPercap
+df_scaled <- stdizer(X = df, col_index = c(6), method = 'mean_sd')
+
+# Setup sample dataset 
+Name <- c("Sam", "Tim", NA)
+Sex <- c("women", "men", "women")
+Age <- c(55, 62, NA)
+dt <- data.frame(Name, Sex, Age)
+
+# Count NAs in sample dataset
+na_count <- na_counter(dt)
+
+# Split gapminder
+split_data <- splitter(df, 1, split_size = 0.8, seed=42)
+```
+

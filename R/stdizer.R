@@ -13,15 +13,15 @@
 #' @examples
 #' df <- tibble::tibble(feat1 = c(1:100), feat2 = runif(100, min = 0, max = 5000))
 #'
-#' df_stdized <- stdizer(X = df, col_index = c(1, 2), method = 'mean_std')
-stdizer <- function(X, col_index=NULL, method, method_args) {
+#' df_stdized <- stdizer(X = df, col_index = c(1, 2), method = 'mean_sd')
+stdizer <- function(X, col_index=NULL, method='mean_sd', method_args) {
 
   if (is.null(col_index)) {
     col_index <- names(X)
   }
 
   assertthat::assert_that(nrow(X) > 1, msg = "Must have more than one observation.")
-  assertthat::assert_that(is.data.frame(X) | is_tibble(X), msg = "X not of type dataframe or tibble")
+  assertthat::assert_that(is.data.frame(X) | tibble::is_tibble(X), msg = "X not of type dataframe or tibble")
   assertthat::assert_that(method %in% c("mean_sd", "mean", "sd", "min_max", "own"), msg = "Invalid method argument")
 
   if (method == "mean_sd") {
