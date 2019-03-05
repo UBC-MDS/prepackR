@@ -10,8 +10,9 @@
 #'
 #' df <- tibble::tibble(feat1 = c(1:3, NA, 5:7, NA, NA, NA))
 #'
-#' na_counter(X=df, col_index = c("feat1"))
+#' na_data <- na_counter(X=df, col_index = c("feat1"))
 #'
+
 na_counter <- function(X, col_index=c()) {
   assertthat::assert_that(is.vector(col_index) | is.null(col_index), msg = "col_index must be a vector")
   assertthat::assert_that(is.data.frame(X), msg = "X must be a dataframe")
