@@ -10,6 +10,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests:
-    testthat, knitr, rmarkdown
+    testthat, knitr, rmarkdown, tibble, dplyr, gapminder, assertthat
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1

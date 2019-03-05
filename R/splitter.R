@@ -14,7 +14,7 @@
 #' @examples
 #' df <- tibble::tibble(X = c(1:10), y = rbinom(10, 1, 0.5))
 #'
-#' split_data <- splitter(df, target_index, split_size = 0.8, seed=42)
+#' split_data <- splitter(df, target_index = 1, split_size = 0.8, seed=42)
 #'
 
 splitter <- function(X, target_index, split_size, seed) {
