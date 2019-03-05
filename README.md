@@ -45,7 +45,7 @@ na_counter(X=df, col_index = c("feat1"))
 
 ### `splitter(X, target_column, split_size, seed)`
 
-**Description:** create a function that operates in a similar manner to scikit-learns implementation of `train_test_split`.  Accepts a `tbl_df`, `df`, or `data.frame` as input.  Returns `tbl_df` as output for each train and each test set.
+**Description:** created a function that operates in a similar manner to scikit-learns implementation of `train_test_split`.  Accepts a `tbl_df`, `df`, or `data.frame` as input.  Returns `tbl_df` as output for each train and each test set.
 
 | Input Parameters | Input Type             | Output Parameters | Output Type    |
 |------------------|------------------------|-------------------|----------------|
