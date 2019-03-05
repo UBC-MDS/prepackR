@@ -23,21 +23,93 @@ A common rule of thumb for data scientist is that the data preparation process w
 df <- tibble::tibble(feat1 = c(1:100), feat2 = runif(100, min = 0, max = 5000))
 df_stdized <- stdizer(X = df, col_index = c(1, 2), method = 'mean_sd')
 ```
+```
+# Output of df_stdized
+> df_stdized
+# A tibble: 100 x 2
+   feat1  feat2
+   <dbl>  <dbl>
+ 1 -1.71  0.601
+ 2 -1.68 -0.547
+ 3 -1.65  0.914
+ 4 -1.61 -0.116
+ 5 -1.58  0.716
+ 6 -1.54  1.76 
+ 7 -1.51 -0.562
+ 8 -1.47  0.943
+ 9 -1.44  1.54 
+10 -1.40 -1.20 
+# … with 90 more rows
+```
 
 `splitter()`
 
 ```
 df <- tibble::tibble(X = c(1:10), y = rbinom(10, 1, 0.5))
-split_data <- splitter(df, target_index, split_size = 0.8, seed=42)
+split_data <- splitter(df, target_index=1, split_size = 0.8, seed=42)
+```
+```
+# Output of split_data
+> split_data
+$Xtrain
+# A tibble: 2 x 1
+      y
+  <int>
+1     0
+2     0
+
+$ytrain
+# A tibble: 2 x 1
+      X
+  <int>
+1     2
+2     7
+
+$Xtest
+# A tibble: 8 x 1
+      y
+  <int>
+1     0
+2     1
+3     0
+4     0
+5     0
+6     1
+7     1
+8     0
+
+$ytest
+# A tibble: 8 x 1
+      X
+  <int>
+1    10
+2     9
+3     3
+4     6
+5     4
+6     8
+7     5
+8     1
 ```
 
 `na_counter()`
 
 ```
 df <- tibble::tibble(feat1 = c(1:3, NA, 5:7, NA, NA, NA))
-na_counter(X=df, col_index = c("feat1"))
-
+na_data <- na_counter(X=df, col_index = c("feat1"))
 ```
+```
+# Output of na_data
+> na_data
+# A tibble: 1 x 1
+  feat1
+  <int>
+1     4
+```
+
+## Test results
+
+![](img/test_results.png)
 
 ## Test coverage
 
