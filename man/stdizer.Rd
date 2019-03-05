@@ -4,7 +4,7 @@
 \alias{stdizer}
 \title{Standardize features within a dataframe.}
 \usage{
-stdizer(X, col_index, method, method_args)
+stdizer(X, col_index = NULL, method = "mean_sd", method_args)
 }
 \arguments{
 \item{X}{tbl_df, df, data.frame}
@@ -24,5 +24,5 @@ Accepts a tbl_df, df, or data.frame and returns a tbl_df with standardized featu
 \examples{
 df <- tibble::tibble(feat1 = c(1:100), feat2 = runif(100, min = 0, max = 5000))
 
-df_stdized <- stdizer(X = df, col_index = c(1, 2), method = 'mean_std')
+df_stdized <- stdizer(X = df, col_index = c(1, 2), method = 'mean_sd')
 }

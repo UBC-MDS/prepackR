@@ -4,7 +4,7 @@
 \alias{na_counter}
 \title{Summarize the missing values that exist in a dataframe}
 \usage{
-na_counter(X, col_index)
+na_counter(X, col_index = c())
 }
 \arguments{
 \item{X}{tbl_df, df, data.frame}
